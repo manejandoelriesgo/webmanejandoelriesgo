@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tu diagnóstico como líder | Manejando el Riesgo</title>
+<meta name="description" content="Seis situaciones reales. Tres minutos. Descubre hacia dónde te inclinas cuando aprieta la presión.">
+<link rel="canonical" href="https://manejandoelriesgo.es/test">
+<meta name="theme-color" content="#14213D">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Manejando el Riesgo">
+<meta property="og:url" content="https://manejandoelriesgo.es/test">
+<meta property="og:title" content="Tu diagnóstico como líder">
+<meta property="og:description" content="Seis situaciones reales. Tres minutos. Descubre hacia dónde te inclinas cuando aprieta la presión.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#FAF8F4; --navy:#14213D; --ink:#1A1A1A; --red:#C8102E;
+  --grey:#6E6E6E; --line:#E2DCD0; --soft:#F1ECE3; --card:#FFFFFF;
+}
+body{font-family:'Lato',system-ui,sans-serif;color:var(--ink);background:var(--bg);
+  -webkit-font-smoothing:antialiased;line-height:1.6;font-size:17px}
+.cond{font-family:'Roboto Condensed','Arial Narrow',sans-serif;font-weight:700;
+  text-transform:uppercase;line-height:1.04;color:var(--navy);letter-spacing:.2px}
+a{color:inherit}
+.wrap{max-width:560px;margin:0 auto;padding:0 20px 60px}
+
+/* CABECERA */
+header{padding:20px 0 6px}
+header .inner{max-width:560px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:10px}
+header img{height:34px;width:auto;display:block}
+header .nom{font-family:'Roboto Condensed',sans-serif;font-weight:700;text-transform:uppercase;
+  font-size:13px;letter-spacing:1.4px;color:var(--navy)}
+
+/* CHIP */
+.chip{display:inline-block;background:var(--red);color:#fff;font-family:'Roboto Condensed',sans-serif;
+  font-weight:700;text-transform:uppercase;letter-spacing:1.6px;font-size:11.5px;padding:6px 12px 5px}
+
+/* PROGRESO */
+.prog{display:flex;gap:5px;margin:18px 0 22px}
+.prog i{flex:1;height:4px;background:var(--line);display:block}
+.prog i.on{background:var(--red)}
+
+/* PANTALLAS */
+.scr{display:none}
+.scr.on{display:block;animation:fade .22s ease-out}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+h1{font-size:clamp(28px,7vw,38px);margin:14px 0 12px}
+h2.q{font-size:clamp(21px,5vw,26px);margin:0 0 4px}
+.sub{font-family:'Roboto Condensed',sans-serif;font-weight:700;text-transform:uppercase;
+  color:var(--red);font-size:15px;letter-spacing:.4px;margin-bottom:4px}
+.rule{height:3px;background:var(--red);margin:14px 0 18px;max-width:100%}
+.lead{font-size:17px;max-width:60ch}
+.lead strong{color:var(--navy)}
+
+/* SITUACIÓN */
+.sit{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--navy);
+  padding:18px 20px;margin:16px 0 20px;border-radius:0 14px 14px 0;font-size:17px;line-height:1.55}
+.sit b{color:var(--red);font-weight:700}
+.tudec{font-family:'Roboto Condensed',sans-serif;font-weight:700;text-transform:uppercase;
+  letter-spacing:1.6px;font-size:12.5px;color:var(--navy);margin-bottom:10px;display:block}
+
+/* OPCIONES */
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{width:100%;text-align:left;background:var(--card);border:1px solid var(--line);
+  border-radius:14px;padding:15px 17px;font-family:'Lato',sans-serif;font-size:16.2px;
+  line-height:1.5;color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--navy)}
+.opt:focus-visible{outline:3px solid var(--navy);outline-offset:2px}
+.opt.sel{border-color:var(--navy);background:var(--soft);font-weight:700;color:var(--navy)}
+.opt.hide{display:none}
+
+/* CONSECUENCIA */
+.after{background:var(--soft);border-left:4px solid var(--grey);padding:16px 18px;
+  margin:18px 0 0;border-radius:0 12px 12px 0;display:none}
+.after.on{display:block;animation:fade .25s ease-out}
+.after .k{font-family:'Roboto Condensed',sans-serif;font-weight:700;text-transform:uppercase;
+  letter-spacing:1.6px;font-size:12px;color:var(--navy);margin-bottom:6px}
+.after p{font-size:16px;line-height:1.55}
+
+/* BOTONES */
+.btn{display:block;width:100%;min-height:56px;background:var(--red);color:#fff;border:none;
+  font-family:'Roboto Condensed',sans-serif;font-weight:700;text-transform:uppercase;
+  letter-spacing:1.2px;font-size:17px;cursor:pointer;border-radius:12px;margin-top:18px;
+  padding:16px 18px;transition:filter .15s}
+.btn:hover{filter:brightness(1.08)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.btn.ghost{background:transparent;color:var(--navy);border:2px solid var(--navy)}
+.pie{font-size:13.5px;color:var(--grey);margin-top:16px}
+
+/* FORMULARIO */
+.card{background:var(--navy);border-top:4px solid var(--red);padding:24px 22px 22px;
+  box-shadow:0 20px 44px rgba(20,33,61,.24);border-radius:0 0 14px 14px;margin-top:18px}
+.card h3{font-family:'Roboto Condensed',sans-serif;font-weight:700;text-transform:uppercase;
+  color:#fff;font-size:22px;line-height:1.08;margin-bottom:8px}
+.card p{font-size:14.6px;color:rgba(250,248,244,.86);margin-bottom:16px}
+.card input[type=text],.card input[type=email]{width:100%;padding:15px 14px;border:none;
+  border-radius:10px;font-family:'Lato',sans-serif;font-size:16.5px;margin-bottom:11px;color:var(--ink)}
+.card label.cons{display:flex;gap:10px;align-items:flex-start;font-size:13.4px;
+  color:rgba(250,248,244,.86);margin:4px 0 4px;cursor:pointer;line-height:1.45}
+.card label.cons input{margin-top:3px;flex-shrink:0;width:17px;height:17px}
+.card label.cons a{color:#fff;text-decoration:underline}
+.micro{font-size:12.8px;color:rgba(250,248,244,.6);margin-top:12px;text-align:center}
+.err{background:#fff;color:var(--red);font-size:14px;padding:10px 12px;border-radius:9px;
+  margin-bottom:10px;display:none;font-weight:700}
+.err.on{display:block}
+
+/* RESULTADO */
+.score{font-family:'Roboto Condensed',sans-serif;font-weight:700;color:var(--red);
+  font-size:clamp(40px,11vw,60px);line-height:1;margin-bottom:2px}
+.score small{font-size:.45em;color:var(--grey)}
+.pname{font-size:clamp(25px,6.4vw,34px);margin-bottom:12px}
+.diag{font-size:17.5px;font-weight:700;color:var(--navy);margin-bottom:22px;line-height:1.5}
+.sec{margin-bottom:22px}
+.sec .k{font-family:'Roboto Condensed',sans-serif;font-weight:700;text-transform:uppercase;
+  letter-spacing:1.6px;font-size:12.5px;color:var(--navy);margin-bottom:9px;
+  display:flex;align-items:center;gap:8px}
+.sec .k::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--navy);flex-shrink:0}
+.sec.good .k::before{background:#2E7D4F}
+.sec.bad .k::before{background:var(--red)}
+.sec p{font-size:16.4px;line-height:1.55;margin-bottom:9px}
+.cont{border-top:2px solid var(--navy);padding-top:14px}
+.cont div{margin-bottom:11px;font-size:16.2px;line-height:1.5}
+.cont b{font-family:'Roboto Condensed',sans-serif;text-transform:uppercase;letter-spacing:1px;
+  font-size:13px;color:var(--red);display:block;margin-bottom:2px}
+.close{background:var(--navy);color:#fff;padding:22px 22px;border-radius:14px;margin-top:24px}
+.close p{font-family:'Roboto Condensed',sans-serif;font-weight:700;text-transform:uppercase;
+  font-size:19px;line-height:1.14;margin-bottom:8px}
+.close span{font-size:13.6px;color:rgba(250,248,244,.75)}
+.sent{font-size:14.6px;color:var(--grey);margin-top:16px;text-align:center}
+.oferta{border-top:2px solid var(--navy);margin-top:26px;padding-top:18px}
+.oferta .k{font-family:'Roboto Condensed',sans-serif;font-weight:700;text-transform:uppercase;
+  letter-spacing:1.6px;font-size:12.5px;color:var(--red);margin-bottom:8px}
+.oferta p{font-size:16.2px;line-height:1.55}
+.oferta .btn{text-align:center;text-decoration:none;line-height:1.3;
+  display:flex;align-items:center;justify-content:center}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <img id="logo" src="/logo-escudo.png" alt="" onerror="this.remove()">
+    <span class="nom">Manejando el Riesgo</span>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="prog" id="prog" style="display:none"></div>
+  <div id="app"></div>
+</div>
+
+<script>
+/* ============ CONFIGURACIÓN DE ENVÍO ============ */
+const ML_ACCOUNT = '2365663';
+
+/* Bloque de oferta al final del resultado. Activado por decisión de Iván (12 nov 2026). */
+const OFERTA_ACTIVA = true;
+const ML_FORMS = {
+  bisagra:      '203959288991843983',
+  sostiene_todo:'203964654434649098',
+  controla_todo:'203964633322620252'
+};
+
+/* ============ CONTENIDO ============ */
+const ROLES = [
+  ['Tengo una empresa','','empresario'],
+  ['Soy jefe de área, con jefes de equipo a mi cargo','','jefe_area'],
+  ['Soy jefe de equipo','','jefe_equipo'],
+  ['No tengo equipo a mi cargo','','sin_equipo']
+];
+
+const EJES = {
+  estandar:{n:'Sostener el estándar',max:8,
+    fuerte:'Dices dónde está la línea y la mantienes sin espectáculo.',
+    des:'Lo que toleras se convierte en la norma. Decir que no, con motivo y a tiempo.'},
+  delegar:{n:'Delegar',max:8,
+    fuerte:'Das trabajo y das capacidad. Tu equipo crece sin depender de ti.',
+    des:'Resolver tú es más rápido hoy y más caro mañana. Delegar con revisión, no rescatar.'},
+  convers:{n:'Conversaciones difíciles',max:4,
+    fuerte:'Corriges conductas a tiempo, en privado y con claridad.',
+    des:'Lo que no se habla, se repite. Una conversación incómoda a tiempo evita diez después.'},
+  error:{n:'Gestión del error',max:4,
+    fuerte:'Tu equipo te cuenta los errores a tiempo porque sabe qué pasa cuando lo hace.',
+    des:'Si castigas el error, te lo esconden. Si lo ignoras, se repite. Primero contenerlo, después corregir el proceso.'},
+  presion:{n:'Mandar bajo presión',max:8,
+    fuerte:'Cuando algo se cae, ordenas antes de actuar.',
+    des:'Bajo presión, responder a todos no es dirigir. Primero contener, después repartir.'}
+};
+const ORDEN_EJES = ['estandar','delegar','convers','error','presion'];
+
+const SITS = [
+ {seg:1, et:'Situación 1 de 6', eje:'estandar',
+  sit:'Marcos te entrega un trabajo <b>por debajo de lo que habíais acordado</b>. No está mal del todo, pero no es lo pactado. Es la <b>tercera vez este mes</b>, y el resto lo ha visto.',
+  op:[
+   ['Lo doy por bueno. Vale para salir y Marcos lleva encima más carga que nadie.','P','El equipo acaba de ver dónde está el listón de verdad. No lo has puesto tú: lo has aceptado.'],
+   ['Lo repaso en la próxima reunión, como criterio general para todos.','CpP','Los que entregan bien se dan por aludidos. Marcos sabe que no va por él. Has hablado a todos para no hablar con uno.'],
+   ['Se lo digo delante del equipo. Así el listón queda claro para todos a la vez.','A','El listón queda claro. También que aquí se corrige en público. Lo próximo que les salga regular, no te lo enseñarán.'],
+   ['Se lo devuelvo a solas, con lo que falta concreto, aunque hoy no tenga tiempo.','C','Te cuesta una conversación y un retraso. Marcos sabe exactamente qué falta, y el equipo ve que el nivel se sostiene sin espectáculo.']
+  ]},
+ {seg:2, et:'Situación 2 de 6', eje:'estandar',
+  sit:'Oyes cómo <b>uno de los tuyos acaba de dar una instrucción a su gente</b>. No es la que tú habrías dado. <b>Ellos ya han empezado a moverse.</b>',
+  op:[
+   ['Le corrijo ahí mismo. Prefiero una mala cara hoy que un trabajo mal hecho mañana.','A','El trabajo sale a tu manera. Y su gente acaba de aprender que lo que él diga no vale hasta que tú lo confirmes. Mañana te preguntarán a ti.'],
+   ['No digo nada. Es su gente y su decisión, y yo no estaba cuando la tomó.','P','Respetas su autoridad y dejas correr una decisión que crees mala. Si sale mal, él sabrá que tú lo viste y no dijiste nada.'],
+   ['Le llamo aparte antes de que avance: necesito saber por qué lo ha hecho así.','C','Te cuesta una conversación incómoda y pararlo todo dos minutos. Pero lo corriges antes de que se gaste, y su gente no te ve corrigiéndole.'],
+   ['Lo dejo correr hoy y se lo comento en la próxima reunión con todos.','CpA','Delante de todos ya no es una corrección, es un aviso. Y hasta la reunión la decisión ha seguido rodando.']
+  ]},
+ {seg:3, et:'Situación 3 de 6', eje:'delegar',
+  sit:'Pedro lleva media mañana <b>atascado con un presupuesto</b> que tú harías en veinte minutos. El cliente lo espera <b>hoy antes de las cinco</b>.',
+  op:[
+   ['Se lo quito y lo hago yo. El cliente es lo primero y hoy no toca enseñar.','P','El cliente recibe su presupuesto. Pedro aprende que, si se atasca lo suficiente, acabas haciéndolo tú. La próxima vez se atascará antes.'],
+   ['Lo hago yo y le pido que mire cómo lo hago, para que la próxima le salga.','CpP','Mejor que quitárselo sin más. Pero mirar no es hacer. La próxima vez volverá a atascarse en el mismo sitio.'],
+   ['Me siento con él los diez minutos que no tengo y fijamos revisión a las tres.','C','Pierdes diez minutos hoy. Ganas a alguien que el mes que viene no te necesitará para esto. Y la revisión de las tres protege la entrega.'],
+   ['Le digo que lo tenga a las cinco. Es su trabajo y tiene que saber hacerlo.','A','La presión no le da lo que le falta. A las cinco menos diez recibirás un presupuesto con errores o una excusa.']
+  ]},
+ {seg:3, et:'Situación 3 · segunda parte', eje:'delegar',
+  sit:'Son las tres, la hora de la revisión. Pedro está a medias y <b>hay un error de cálculo que él no ha visto</b>.',
+  op:[
+   ['Se lo corrijo yo y que termine el resto. No hay tiempo para más.','A','El error desaparece. Pedro no sabe que lo cometió. Lo repetirá.'],
+   ['No le digo nada. Si lo encuentra él, se le queda para siempre.','P','Aprender a costa del cliente no es desarrollar a nadie. El presupuesto sale con el error y con tu firma.'],
+   ['Se lo quito. Si a media tarde hay errores, no estaba preparado.','A','Pedro aprende que un error a mitad de camino le cuesta la tarea. La próxima vez no te enseñará nada hasta el final.'],
+   ['Le digo en qué línea mirar, sin tocarlo, y lo reviso otra vez al final.','C','Pedro encuentra el error él mismo, y ese ya no lo vuelve a cometer. El presupuesto sale revisado.']
+  ]},
+ {seg:4, et:'Situación 4 de 6', eje:'convers',
+  sit:'Raúl es <b>tu mejor técnico</b>. También es el que <b>contesta mal a los nuevos</b>. Uno de ellos te ha dicho que <b>está pensando en irse</b>.',
+  op:[
+   ['Le aviso de que a la próxima queja esto tendrá consecuencias para él.','A','Raúl entiende que alguien se ha quejado. No entiende qué hace mal. Buscará quién ha sido.'],
+   ['Le pido quince minutos: qué he visto, qué efecto tiene y qué espero.','C','Quince minutos incómodos. Raúl sabe exactamente qué conducta cambiar y que vas a estar mirando. El nuevo ve que alguien le ha protegido.'],
+   ['Lo dejo estar. Es el mejor que tengo y no me puedo permitir perderle.','P','Conservas a Raúl y pierdes a los nuevos, uno detrás de otro. El equipo aprende que, si eres bueno, puedes tratar mal a quien quieras.'],
+   ['Hablo con el nuevo para que no se lo tome a pecho. Raúl es así de seco.','CpP','Has calmado al que se quejaba y has dejado intacto el problema. «Es así» es la frase con la que se normaliza todo lo que no se corrige.']
+  ]},
+ {seg:5, et:'Situación 5 de 6', eje:'error',
+  sit:'Uno de tu equipo <b>te confiesa que se equivocó</b> en un pedido a un proveedor. El fallo <b>aún no ha llegado al cliente</b>, pero <b>costará dinero arreglarlo</b>.',
+  op:[
+   ['Le agradezco que lo diga a tiempo. Lo arreglamos y reviso el proceso.','C','Se contiene antes de llegar al cliente. El equipo aprende que contar un error a tiempo es lo que se espera. Y el proceso mejora.'],
+   ['Le pongo una amonestación. Un fallo que cuesta dinero tiene que doler.','A','La próxima persona que se equivoque no te lo dirá. Te enterarás cuando llegue al cliente.'],
+   ['Le digo que tranquilo, que esto ya lo arreglo yo con el proveedor.','P','Ha aprendido que equivocarse no tiene coste ni deja aprendizaje. Y tú tienes una tarea más.'],
+   ['Lo arreglamos, y le pido que la próxima vaya con más cuidado.','CpA','El problema queda contenido. Pero «más cuidado» no corrige nada: si el fallo estaba en el proceso, se repetirá con otro.']
+  ]},
+ {seg:6, et:'Situación 6 de 6', eje:'presion',
+  sit:'Viernes, 13:00. <b>Se cae el sistema de pedidos.</b> Tres personas te preguntan a la vez qué hacen. <b>Tu jefe te está llamando.</b>',
+  op:[
+   ['Cojo la llamada del jefe. Es quien decide y no le puedo dejar colgado.','CpA','Informas hacia arriba antes de saber qué pasa abajo. Le das nervios, no información. Y tu equipo sigue sin dirección.'],
+   ['Voy contestando a cada uno según me preguntan y luego llamo al jefe.','P','Respondes a todos y no diriges a nadie. Dentro de una hora habrá tres soluciones a medias y ninguna decisión.'],
+   ['Paro dos minutos, decido qué contener, reparto tarea y después llamo.','C','Dos minutos de silencio parecen eternos. A partir de ahí cada uno sabe qué hace, y tu jefe recibe información en vez de nervios.'],
+   ['Les digo que no toquen nada y esperen. Prefiero eso a que lo líen.','A','Nadie hace nada mal porque nadie hace nada. Todo el equipo espera a una sola persona: tú.']
+  ]},
+ {seg:6, et:'Situación 6 · segunda parte', eje:'presion',
+  sit:'Media hora después, <b>el sistema vuelve</b>. El equipo quiere irse a comer y <b>olvidarlo</b>.',
+  op:[
+   ['Que se vayan a comer. Ya ha pasado y bastante tarde se ha hecho.','P','Ha pasado esta vez. La próxima caída os encontrará igual de desprevenidos.'],
+   ['Cinco minutos antes de irnos: qué ha pasado y qué haremos distinto.','C','Cinco minutos convierten un mal rato en un procedimiento. La próxima caída dura la mitad.'],
+   ['Antes de que nadie salga quiero saber quién ha provocado la caída.','A','Encontrarás un culpable. No encontrarás la causa. Y la próxima vez nadie te avisará tan rápido.'],
+   ['Lo vemos el lunes con calma, que ahora mismo están todos calientes.','CpP','El lunes nadie se acordará de los detalles que importan. Lo que no se revisa en caliente, se pierde.']
+  ]}
+];
+
+const PERFILES = {
+  sostiene_todo:{
+    nombre:'El mando que lo sostiene todo',
+    diag:'Evitas el conflicto, y el precio lo pagas tú. Cada excepción que haces para no incomodar se convierte en trabajo tuyo.',
+    cont:[['En ti','Llegarás a casa con la sensación de haber trabajado por tres. Porque lo habrás hecho.'],
+          ['En tu equipo','Los que cumplen se cansarán de cargar con los que no. Y serán los primeros en irse.'],
+          ['En tus resultados','El estándar real del equipo será el que hayas tolerado, no el que hayas dicho.']]},
+  controla_todo:{
+    nombre:'El mando que lo controla todo',
+    diag:'El equipo cumple, pero no piensa. Todo pasa por ti, y lo que no te gusta, te lo esconden.',
+    cont:[['En ti','Serás imprescindible. Y eso significa que no podrás faltar ni un día.'],
+          ['En tu equipo','Harán exactamente lo que digas. Ni más ni menos. Ni una idea, ni un aviso.'],
+          ['En tus resultados','Te enterarás de los problemas cuando ya no tengan arreglo barato.']]},
+  bisagra:{
+    nombre:'La bisagra',
+    diag:'Sostienes el estándar sin perder al equipo. Traduces hacia abajo y das la cara hacia arriba.',
+    cont:[['En ti','Tu riesgo ya no es no saber qué hacer, sino dejar de hacerlo cuando aprieta la carga.'],
+          ['En tu equipo','Tienes un equipo que funciona sin ti. Protégelo: es lo primero que se rompe cuando el mando se satura.'],
+          ['En tus resultados','Lo que te queda es sistematizarlo, para que no dependa de tu energía de cada día.']]}
+};
+
+/* ============ ESTADO ============ */
+let paso = -1;            // -1 portada, 0 rol, 1..8 situaciones, 9 formulario, 10 resultado
+let rol = '';
+let respuestas = [];      // etiquetas
+const app = document.getElementById('app');
+const prog = document.getElementById('prog');
+
+function pintaProg(){
+  if(paso<1 || paso>8){ prog.style.display='none'; return; }
+  prog.style.display='flex';
+  const seg = SITS[paso-1].seg;
+  prog.innerHTML = [1,2,3,4,5,6].map(n=>'<i class="'+(n<=seg?'on':'')+'"></i>').join('');
+}
+
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+
+/* ============ PANTALLAS ============ */
+function portada(){
+  app.innerHTML = `
+  <div class="scr on">
+    <span class="chip">Liderazgo operativo</span>
+    <h1 class="cond">Tu diagnóstico como líder</h1>
+    <div class="rule"></div>
+    <p class="lead">Ni permisivo ni autoritario. Descubre hacia dónde te inclinas cuando aprieta la presión.</p>
+    <p class="lead" style="margin-top:12px"><strong>Seis situaciones reales. Tres minutos.</strong></p>
+    <button class="btn" id="go">Empezar el test</button>
+    <p class="pie">Iván Mariscal · Manejando el Riesgo</p>
+  </div>`;
+  document.getElementById('go').onclick=()=>{paso=0;render()};
+}
+
+function pantallaRol(){
+  app.innerHTML = `
+  <div class="scr on">
+    <span class="chip">Antes de empezar</span>
+    <h2 class="q cond" style="margin-top:14px">Desde dónde mandas hoy.</h2>
+    <div class="rule"></div>
+    <p class="lead" style="margin-bottom:16px">Mira quién tienes justo debajo.</p>
+    <div class="opts" id="opts"></div>
+  </div>`;
+  const c=document.getElementById('opts');
+  ROLES.forEach(([t,d,v])=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.type='button';
+    b.innerHTML = '<strong>'+t+'</strong>' + (d?'<br><span style="color:var(--grey);font-size:15px">'+d+'</span>':'');
+    b.onclick=()=>{rol=v;paso=1;render()};
+    c.appendChild(b);
+  });
+}
+
+function pantallaSit(i){
+  const s = SITS[i];
+  app.innerHTML = `
+  <div class="scr on">
+    <span class="chip">${s.et}</span>
+    <div class="sit">${s.sit}</div>
+    <span class="tudec">Tu decisión</span>
+    <div class="opts" id="opts"></div>
+    <div class="after" id="after"><div class="k">Lo que pasa después</div><p id="afterTxt"></p></div>
+    <button class="btn" id="next" style="display:none">Siguiente</button>
+  </div>`;
+  const c=document.getElementById('opts');
+  s.op.forEach(([txt,tag,cons],idx)=>{
+    const b=document.createElement('button');
+    b.className='opt'; b.type='button'; b.textContent=txt;
+    b.onclick=()=>{
+      respuestas[i]={tag:tag,eje:s.eje};
+      [...c.children].forEach((o,j)=>{ if(j!==idx) o.classList.add('hide'); });
+      b.classList.add('sel');
+      document.getElementById('afterTxt').textContent=cons;
+      document.getElementById('after').classList.add('on');
+      const n=document.getElementById('next');
+      n.style.display='block';
+      n.onclick=()=>{paso++;render()};
+      n.scrollIntoView({behavior:'smooth',block:'center'});
+    };
+    c.appendChild(b);
+  });
+}
+
+/* ============ CÁLCULO ============ */
+function calcula(){
+  const pts = {C:4,CpP:2,CpA:2,P:0,A:0};
+  let total=0, cC=0,cP=0,cA=0;
+  const ejePts={}; ORDEN_EJES.forEach(k=>ejePts[k]=0);
+  respuestas.forEach(r=>{
+    const p=pts[r.tag]; total+=p; ejePts[r.eje]+=p;
+    if(r.tag==='C') cC++;
+    else if(r.tag==='P'||r.tag==='CpP') cP++;
+    else cA++;
+  });
+  const punt = Math.round(total/32*100);
+  let perfil;
+  if(punt>=75) perfil='bisagra';
+  else if(cP>cA) perfil='sostiene_todo';
+  else if(cA>cP) perfil='controla_todo';
+  else perfil='sostiene_todo';
+
+  const pct = ORDEN_EJES.map(k=>({k:k,v:ejePts[k]/EJES[k].max}));
+  const ordDesc=[...pct].sort((a,b)=>b.v-a.v);
+  const fuerte = ordDesc[0];
+  const ordAsc=[...pct].sort((a,b)=>a.v-b.v).filter(e=>e.k!==fuerte.k);
+  let des = ordAsc.filter(e=>e.v<0.75).slice(0,2);
+  if(des.length===0) des=[ordAsc[0]];
+  return {punt:punt, perfil:perfil, fuerte:fuerte, des:des};
+}
+
+/* ============ FORMULARIO ============ */
+function pantallaForm(){
+  app.innerHTML = `
+  <div class="scr on">
+    <span class="chip">Test completado</span>
+    <h2 class="q cond" style="margin-top:14px">Tu diagnóstico está listo.</h2>
+    <div class="rule"></div>
+    <div class="card">
+      <h3>Déjame tu correo y te lo enseño</h3>
+      <p>Es lo único que te pido para ver tu diagnóstico completo.</p>
+      <div class="err" id="err"></div>
+      <input type="text" id="nm" placeholder="Tu nombre" autocomplete="given-name">
+      <input type="email" id="em" placeholder="tu@email.com" autocomplete="email">
+      <label class="cons"><input type="checkbox" id="ck">
+        <span>Acepto la <a href="/privacidad.html" target="_blank">política de privacidad</a> y recibir la newsletter de Manejando el Riesgo: una idea cada martes. Puedes darte de baja cuando quieras.</span></label>
+      <button class="btn" id="send" style="margin-top:14px">Ver mi diagnóstico</button>
+      <p class="micro">Sin spam. Solo lo que sirve para mandar mejor.</p>
+    </div>
+  </div>`;
+  document.getElementById('send').onclick=envia;
+}
+
+let enviado=false;
+async function envia(){
+  const nm=document.getElementById('nm').value.trim();
+  const em=document.getElementById('em').value.trim();
+  const ck=document.getElementById('ck').checked;
+  const err=document.getElementById('err');
+  const muestra=t=>{err.textContent=t;err.classList.add('on')};
+  if(!nm) return muestra('Escribe tu nombre.');
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)) return muestra('Revisa el correo.');
+  if(!ck) return muestra('Marca la casilla para poder enviártelo.');
+  err.classList.remove('on');
+  const b=document.getElementById('send');
+  b.disabled=true; b.textContent='Enviando…';
+
+  const r=calcula();
+  const fd=new FormData();
+  fd.append('fields[email]',em);
+  fd.append('fields[name]',nm);
+  fd.append('fields[rol]',rol);
+  fd.append('fields[perfil]',r.perfil);
+  fd.append('fields[puntuacion]',String(r.punt));
+  fd.append('fields[eje_fuerte]',EJES[r.fuerte.k].fuerte);
+  fd.append('fields[ejes_desarrollo]',r.des.map(e=>EJES[e.k].des).join(' · '));
+  fd.append('fields[origen]','test_mando');
+  fd.append('ml-submit','1');
+  fd.append('anticsrf','true');
+
+  const fid=ML_FORMS[r.perfil];
+  try{
+    await fetch('https://assets.mailerlite.com/jsonp/'+ML_ACCOUNT+'/forms/'+fid+'/subscribe',
+      {method:'POST',body:fd});
+    enviado=true;
+  }catch(e){ enviado=false; }
+  paso=10; render(r);
+}
+
+/* ============ RESULTADO ============ */
+function pantallaResultado(r){
+  r = r || calcula();
+  const P=PERFILES[r.perfil];
+  const fuerteTxt = r.fuerte.v===0
+    ? 'Has hecho el test con honestidad. Ese es el punto de partida.'
+    : EJES[r.fuerte.k].fuerte;
+  const fuerteNom = r.fuerte.v===0 ? 'Tu punto de partida' : EJES[r.fuerte.k].n;
+
+  app.innerHTML = `
+  <div class="scr on">
+    <span class="chip">Tu resultado</span>
+    <div class="score cond" style="margin-top:14px">${r.punt}<small>/100</small></div>
+    <h2 class="pname cond">${P.nombre}</h2>
+    <div class="rule"></div>
+    <p class="diag">${P.diag}</p>
+
+    <div class="sec good">
+      <div class="k">Lo que ya haces bien</div>
+      <p><strong>${fuerteNom}.</strong> ${fuerteTxt}</p>
+    </div>
+
+    <div class="sec bad">
+      <div class="k">Lo que te está costando</div>
+      ${r.des.map(e=>'<p><strong>'+EJES[e.k].n+'.</strong> '+EJES[e.k].des+'</p>').join('')}
+    </div>
+
+    <div class="sec cont">
+      <div style="font-family:'Roboto Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:1.6px;font-size:12.5px;color:var(--navy);margin-bottom:12px">Si este patrón continúa</div>
+      ${P.cont.map(([k,v])=>'<div><b>'+k+'</b>'+v+'</div>').join('')}
+    </div>
+
+    <div class="close">
+      <p>Esto no es carácter. Es método. Y el método se entrena.</p>
+      <span>Iván Mariscal · Manejando el Riesgo</span>
+    </div>
+    ${OFERTA_ACTIVA ? `
+    <div class="oferta">
+      <div class="k">Entrenarlo con tus casos</div>
+      <p>Esto que acabas de leer son seis situaciones inventadas. Las tuyas tienen nombres,
+      historia y consecuencias. Si quieres trabajarlas una a una, escríbeme.</p>
+      <a class="btn" href="mailto:info@manejandoelriesgo.es?subject=Formaci%C3%B3n%20-%20resultado%20del%20test">info@manejandoelriesgo.es</a>
+    </div>` : `
+    <div class="oferta">
+      <div class="k">Tu caso</div>
+      <p>Esto son seis situaciones inventadas. Si la tuya no está aquí, mándamela y la contesto en vídeo.</p>
+      <a class="btn ghost" href="/pregunta">Contarme mi situación</a>
+    </div>`}
+  </div>`;
+}
+
+/* ============ ROUTER ============ */
+function render(r){
+  window.scrollTo({top:0,behavior:'instant'});
+  pintaProg();
+  if(paso===-1) return portada();
+  if(paso===0)  return pantallaRol();
+  if(paso>=1 && paso<=8) return pantallaSit(paso-1);
+  if(paso===9)  return pantallaForm();
+  return pantallaResultado(r);
+}
+// permite abrir una pantalla concreta para revisarla: test.html#p=0
+const _m = /p=(-?\d+)/.exec(location.hash);
+if(_m) paso = parseInt(_m[1],10);
+render();
+</script>
+</body>
+</html>
