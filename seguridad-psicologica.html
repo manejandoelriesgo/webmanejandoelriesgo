@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Protocolo de seguridad psicológica | Manejando el Riesgo</title>
+<meta name="description" content="Las cinco conductas del mando que deciden si tu equipo te cuenta los problemas antes de que estallen. Protocolo gratuito de 7 páginas.">
+<link rel="canonical" href="https://manejandoelriesgo.es/seguridad-psicologica">
+<meta name="theme-color" content="#14213D">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Manejando el Riesgo">
+<meta property="og:url" content="https://manejandoelriesgo.es/seguridad-psicologica">
+<meta property="og:title" content="Si tu equipo no te cuenta los problemas, no es que no los haya">
+<meta property="og:description" content="Las cinco conductas del mando que deciden si te enteras a tiempo o te enteras por el cliente.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#FAF8F4; --navy:#14213D; --ink:#1A1A1A; --red:#C8102E;
+  --grey:#6E6E6E; --line:#E2DCD0; --soft:#F1ECE3;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Lato',system-ui,sans-serif;color:var(--ink);background:var(--bg);
+  -webkit-font-smoothing:antialiased;line-height:1.62;font-size:17px}
+.wrap{max-width:860px;margin:0 auto;padding:0 22px}
+.cond{font-family:'Roboto Condensed','Arial Narrow',sans-serif;font-weight:700;
+  text-transform:uppercase;line-height:1.04;color:var(--navy);letter-spacing:.2px}
+a{color:inherit}
+
+header{padding:20px 0 0}
+header .wrap{display:flex;align-items:center;gap:10px}
+header img{height:38px;width:auto;display:block}
+header .nom{font-family:'Roboto Condensed',sans-serif;font-weight:700;text-transform:uppercase;
+  font-size:14px;letter-spacing:1.4px;color:var(--navy)}
+
+.chip{display:inline-block;background:var(--red);color:#fff;font-family:'Roboto Condensed',sans-serif;
+  font-weight:700;text-transform:uppercase;letter-spacing:1.6px;font-size:11.5px;padding:6px 12px 5px}
+
+.hero{padding:26px 0 8px}
+h1{font-size:clamp(30px,5.2vw,46px);margin:14px 0 10px}
+.sub{font-family:'Roboto Condensed',sans-serif;font-weight:700;text-transform:uppercase;
+  color:var(--red);font-size:clamp(14px,2vw,17px);letter-spacing:.4px}
+.rule{height:3px;background:var(--red);margin:14px 0 18px}
+.lead{font-size:17.5px;max-width:62ch}
+.lead strong{color:var(--navy)}
+.lead+.lead{margin-top:12px}
+
+h2.sec{font-size:clamp(21px,3.4vw,28px);margin:42px 0 4px}
+.secline{height:2px;background:var(--navy);margin:10px 0 20px}
+
+/* MATRIZ */
+.matriz{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0 6px}
+.m{background:#fff;border:1px solid var(--line);padding:16px 16px 14px}
+.m.on{border:1px solid var(--navy);border-top:4px solid var(--red)}
+.m .k{font-family:'Roboto Condensed',sans-serif;font-weight:700;text-transform:uppercase;
+  letter-spacing:1.3px;font-size:10.5px;color:var(--grey);margin-bottom:5px}
+.m.on .k{color:var(--red)}
+.m h4{font-family:'Roboto Condensed',sans-serif;font-weight:700;text-transform:uppercase;
+  color:var(--navy);font-size:19px;line-height:1.1;margin-bottom:6px}
+.m p{font-size:14.6px;line-height:1.5;color:var(--ink)}
+.pie-m{font-size:14.6px;color:var(--grey);margin-top:10px}
+
+/* CONDUCTAS */
+.cond-list{display:flex;flex-direction:column;gap:22px;margin-top:4px}
+.c{display:flex;gap:16px;align-items:flex-start}
+.c .n{font-family:'Roboto Condensed',sans-serif;font-weight:700;font-size:34px;
+  color:var(--line);line-height:.95;flex-shrink:0;min-width:42px}
+.c .t{font-family:'Roboto Condensed',sans-serif;font-weight:700;text-transform:uppercase;
+  color:var(--navy);font-size:20px;line-height:1.12;margin-bottom:4px}
+.c .aprende{font-size:15.6px;font-style:italic;color:var(--red);margin-bottom:4px}
+.c .hace{font-size:15.8px;line-height:1.52}
+.c .hace b{color:var(--navy)}
+
+.bloque{margin-top:40px}
+.bloque p{font-size:16.6px;max-width:62ch;margin-bottom:12px}
+
+/* CAPTACIÓN */
+#alta{scroll-margin-top:20px}
+.card{background:var(--navy);border-top:4px solid var(--red);padding:28px 26px 24px;
+  box-shadow:0 22px 48px rgba(20,33,61,.26);max-width:640px;margin:34px 0 0}
+.card h3{font-family:'Roboto Condensed',sans-serif;font-weight:700;text-transform:uppercase;
+  color:#fff;font-size:25px;line-height:1.08;margin-bottom:9px}
+.card p{font-size:14.8px;color:rgba(250,248,244,.86);margin-bottom:16px}
+.card p strong{color:#fff}
+.card input[type=text],.card input[type=email]{width:100%;padding:15px 14px;border:none;
+  border-radius:8px;font-family:'Lato',sans-serif;font-size:16.5px;margin-bottom:11px;color:var(--ink)}
+.card label.cons{display:flex;gap:10px;align-items:flex-start;font-size:13.4px;
+  color:rgba(250,248,244,.86);margin:4px 0 2px;cursor:pointer;line-height:1.45}
+.card label.cons input{margin-top:3px;flex-shrink:0;width:17px;height:17px}
+.card label.cons a{color:#fff;text-decoration:underline}
+.btn{display:block;width:100%;min-height:56px;background:var(--red);color:#fff;border:none;
+  font-family:'Roboto Condensed',sans-serif;font-weight:700;text-transform:uppercase;
+  letter-spacing:1.2px;font-size:17px;cursor:pointer;border-radius:8px;margin-top:14px;
+  padding:16px 18px;transition:filter .15s}
+.btn:hover{filter:brightness(1.08)}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+.micro{font-size:12.8px;color:rgba(250,248,244,.6);margin-top:12px;text-align:center}
+.err{background:#fff;color:var(--red);font-size:14px;padding:10px 12px;border-radius:7px;
+  margin-bottom:10px;display:none;font-weight:700}
+.err.on{display:block}
+.ok{display:none}
+.ok.on{display:block}
+.ok h3{margin-bottom:10px}
+.ok p{font-size:15.4px}
+
+footer{margin-top:50px;border-top:1px solid var(--line);padding:22px 0 50px;
+  font-size:13.8px;color:var(--grey)}
+footer a{color:var(--navy)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <img src="/logo-escudo.png" alt="" onerror="this.remove()">
+    <span class="nom">Manejando el Riesgo</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <span class="chip">Protocolo gratuito</span>
+    <h1 class="cond">Si esta semana nadie te ha traído un error, no es que no haya habido ninguno</h1>
+    <div class="sub">Seguridad psicológica para mandos que exigen</div>
+    <div class="rule"></div>
+    <p class="lead">En un hospital se midió qué equipos de enfermería cometían más errores con la
+    medicación. Los equipos con mejor jefatura registraban muchos más. <strong>No se equivocaban
+    más: los contaban.</strong> Y lo que no se cuenta, no se corrige.</p>
+  </section>
+
+  <div class="card" id="alta">
+    <div id="form">
+      <h3>Te lo mando al correo</h3>
+      <p>Siete páginas. <strong>Llega en un minuto.</strong></p>
+      <div class="err" id="err"></div>
+      <input type="text" id="nm" placeholder="Tu nombre" autocomplete="given-name">
+      <input type="email" id="em" placeholder="tu@email.com" autocomplete="email">
+      <label class="cons"><input type="checkbox" id="ck">
+        <span>Acepto la <a href="/privacidad.html" target="_blank">política de privacidad</a> y
+        recibir el protocolo y la newsletter: una idea cada martes. Puedes darte de baja cuando
+        quieras.</span></label>
+      <button class="btn" id="send">Enviádmelo</button>
+      <p class="micro">Sin spam. Solo lo que sirve para mandar mejor.</p>
+    </div>
+    <div class="ok" id="ok">
+      <h3>Hecho</h3>
+      <p>Te he enviado el protocolo al correo. Si en cinco minutos no está, mira en promociones o
+      en spam, y márcalo como correo deseado para que los siguientes te lleguen bien.</p>
+    </div>
+  </div>
+
+  <h2 class="sec cond">Seguridad psicológica no es permisividad</h2>
+  <div class="secline"></div>
+  <p class="lead">Es lo que más se confunde. Que tu equipo te cuente los problemas no significa que
+  todo valga. Al revés: <strong>los equipos que cuentan sus errores lo hacen porque el listón está
+  alto</strong> y les importa el resultado. Ahí lo único que no se perdona es el error escondido.</p>
+  <p class="lead">Y dar con ese punto no es sencillo. Por eso casi nadie lo tiene: unos bajan la
+  exigencia para que el equipo hable y otros la suben hasta que el equipo se calla. Donde se ha
+  resuelto de verdad es en organizaciones de alta exigencia, donde un fallo se paga caro y nadie
+  se puede permitir enterarse tarde. Ahí no es una cuestión de ambiente. Es que la información
+  tiene que subir a tiempo.</p>
+
+  <div class="matriz" style="margin-top:22px">
+    <div class="m">
+      <div class="k">Alta exigencia · Baja seguridad</div>
+      <h4>Ansiedad</h4>
+      <p>Se trabaja con miedo. El error se esconde hasta que llega al cliente. Rinde a corto plazo
+      y se rompe a medio.</p>
+    </div>
+    <div class="m on">
+      <div class="k">Alta exigencia · Alta seguridad</div>
+      <h4>Alto rendimiento</h4>
+      <p>Se exige mucho y se cuenta todo. Los problemas llegan pronto, cuando todavía se pueden
+      arreglar. Aquí es donde quieres estar.</p>
+    </div>
+    <div class="m">
+      <div class="k">Baja exigencia · Baja seguridad</div>
+      <h4>Apatía</h4>
+      <p>Nadie se juega nada. Se cumple el mínimo y se calla todo lo demás.</p>
+    </div>
+    <div class="m">
+      <div class="k">Baja exigencia · Alta seguridad</div>
+      <h4>Comodidad</h4>
+      <p>Buen ambiente y poco resultado. Se habla mucho y se corrige poco.</p>
+    </div>
+  </div>
+  <p class="pie-m">La mayoría de mandos cree que tiene que elegir: o exige, o da confianza. El
+  objetivo no es bajar la exigencia para que el equipo hable: es subir las dos a la vez.</p>
+
+  <h2 class="sec cond">Qué hay dentro</h2>
+  <div class="secline"></div>
+  <p class="lead">Las cinco conductas del mando que deciden si tu equipo te cuenta las cosas:</p>
+
+  <div class="cond-list" style="margin-top:16px">
+    <div class="c"><div class="n">1</div><div><div class="t">Castigas al mensajero</div></div></div>
+    <div class="c"><div class="n">2</div><div><div class="t">Hablas tú primero</div></div></div>
+    <div class="c"><div class="n">3</div><div><div class="t">Preguntas «¿alguna duda?»</div></div></div>
+    <div class="c"><div class="n">4</div><div><div class="t">Nunca te equivocas en voz alta</div></div></div>
+    <div class="c"><div class="n">5</div><div><div class="t">Confundes seguridad con blandura</div></div></div>
+  </div>
+
+  <div class="bloque">
+    <p>De cada una tienes cómo se nota, qué aprende tu equipo y qué decir en su lugar, con el
+    ejemplo concreto. Más un chequeo de cinco preguntas para pasar el viernes y una semana de
+    prueba repartida día a día.</p>
+  </div>
+
+  <div class="bloque">
+    <h2 class="cond" style="font-size:22px;margin-bottom:10px">En qué se apoya</h2>
+    <p style="font-size:15px;color:var(--grey)">Amy C. Edmondson (Harvard Business School): estudio
+    de errores de medicación en equipos de enfermería (<i>Journal of Applied Behavioral Science</i>,
+    1996); seguridad psicológica y aprendizaje en 51 equipos de trabajo (<i>Administrative Science
+    Quarterly</i>, 1999); matriz seguridad psicológica–exigencia (<i>The Fearless Organization</i>,
+    2018).</p>
+  </div>
+
+  <footer>
+    Iván Mariscal · Manejando el Riesgo ·
+    <a href="/">Inicio</a> ·
+    <a href="/recursos-liderazgo">Más recursos gratuitos</a> ·
+    <a href="/privacidad.html">Política de privacidad</a>
+  </footer>
+
+</main>
+
+<script>
+const ML_ACCOUNT='2365663', ML_FORM='204058095122383876';
+document.getElementById('send').onclick=async function(){
+  const nm=document.getElementById('nm').value.trim();
+  const em=document.getElementById('em').value.trim();
+  const ck=document.getElementById('ck').checked;
+  const err=document.getElementById('err');
+  const muestra=t=>{err.textContent=t;err.classList.add('on')};
+  if(!nm) return muestra('Escribe tu nombre.');
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)) return muestra('Revisa el correo.');
+  if(!ck) return muestra('Marca la casilla para poder enviártelo.');
+  err.classList.remove('on');
+  this.disabled=true; this.textContent='Enviando…';
+  const fd=new FormData();
+  fd.append('fields[email]',em);
+  fd.append('fields[name]',nm);
+  fd.append('ml-submit','1');
+  fd.append('anticsrf','true');
+  try{
+    await fetch('https://assets.mailerlite.com/jsonp/'+ML_ACCOUNT+'/forms/'+ML_FORM+'/subscribe',
+      {method:'POST',body:fd});
+  }catch(e){}
+  document.getElementById('form').style.display='none';
+  document.getElementById('ok').classList.add('on');
+  document.getElementById('alta').scrollIntoView({behavior:'smooth',block:'center'});
+};
+</script>
+</body>
+</html>
