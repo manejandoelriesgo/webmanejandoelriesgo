@@ -307,6 +307,30 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-bet
 .prose p{max-width:66ch}
 .prose p{font-size:17.5px;margin-bottom:14px}
 .hero.sub2 h1{font-size:clamp(36px,6.4vw,66px);max-width:17ch}
+
+.gn{position:sticky;top:0;z-index:50;background:rgba(250,248,244,.97);border-bottom:1px solid #E2DCD0;backdrop-filter:blur(6px)}
+.gn-in{max-width:1080px;margin:0 auto;padding:0 22px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.gn .gm{display:flex;align-items:center;gap:10px;text-decoration:none}
+.gn .gm img{height:40px;width:auto;display:block}
+.gn .gnom{font-family:'Roboto Condensed','Arial Narrow',sans-serif;font-weight:700;text-transform:uppercase;font-size:13.5px;letter-spacing:1.4px;color:#14213D}
+.gn .gl{display:flex;align-items:center;gap:22px}
+.gn .gl a.t{font-family:'Lato',system-ui,sans-serif;font-size:14.5px;color:#14213D;text-decoration:none;display:none}
+.gn .gl a.t:hover{color:#C8102E}
+@media(min-width:880px){.gn .gl a.t{display:inline}}
+.gn .gb{background:#C8102E;color:#fff;text-decoration:none;font-family:'Roboto Condensed','Arial Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:1.1px;font-size:13.5px;padding:9px 16px;line-height:1.2}
+.gf{background:#0E1830;color:rgba(250,248,244,.62);font-family:'Lato',system-ui,sans-serif;font-size:14px;line-height:1.6;margin-top:0}
+.gf-in{max-width:1080px;margin:0 auto;padding:34px 22px 38px;display:grid;grid-template-columns:1fr;gap:18px}
+@media(min-width:860px){.gf-in{grid-template-columns:1.2fr 1fr 1fr}}
+.gf .gfb{font-family:'Roboto Condensed','Arial Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;color:#fff;font-size:15px}
+.gf .gfl{margin-top:4px}
+.gf .gfk{font-family:'Roboto Condensed','Arial Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:1.6px;font-size:11.5px;color:rgba(250,248,244,.45);margin-bottom:6px}
+.gf a{color:rgba(250,248,244,.9);text-decoration:none;display:block;padding:2px 0}
+.gf a:hover{text-decoration:underline}
+
+.cerr{display:none;background:#FFF0F0;color:#C8102E;font-weight:700;font-size:14px;padding:10px 12px;margin-bottom:14px}
+.cok{font-size:17px;line-height:1.5;color:#1A1A1A;padding:6px 0}
+.cok b{display:block;font-family:'Roboto Condensed',sans-serif;text-transform:uppercase;color:#14213D;font-size:24px;margin-bottom:6px}
+form{position:relative}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Consultoría de liderazgo", "serviceType": "Consultoría de liderazgo operativo", "provider": {"@type": "Person", "name": "Iván Mariscal", "url": "https://manejandoelriesgo.es/sobre-mi"}, "areaServed": "ES", "url": "https://manejandoelriesgo.es/consultoria-liderazgo", "description": "Consultoría de liderazgo para resolver situaciones concretas: conflictos en el equipo, cuellos de botella, áreas que no se hablan y estructuras de mando que frenan la operativa. Para personas y organizaciones. Online y presencial."}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿La consultoría es solo para empresas?", "acceptedAnswer": {"@type": "Answer", "text": "No. Trabajo con personas que tienen un caso concreto y con organizaciones que quieren revisar su estructura de mando."}}, {"@type": "Question", "name": "¿Qué diferencia hay con la formación?", "acceptedAnswer": {"@type": "Answer", "text": "En la consultoría trabajamos directamente sobre tu caso. En la formación te enseño personalmente a hacerlo: delegar, dar feedback, tener la conversación difícil. Muchas veces se combinan."}}, {"@type": "Question", "name": "¿Aceptas todos los casos?", "acceptedAnswer": {"@type": "Answer", "text": "No. La primera conversación es gratuita y sirve para que los dos veamos si encaja. Tú decides si quieres trabajar conmigo, y yo te digo si puedo y quiero trabajar tu caso."}}, {"@type": "Question", "name": "¿Es online o presencial?", "acceptedAnswer": {"@type": "Answer", "text": "Las dos. Trabajo online y presencial."}}, {"@type": "Question", "name": "¿Cuánto cuesta?", "acceptedAnswer": {"@type": "Answer", "text": "Te doy un precio cerrado en la primera conversación, cuando sé qué necesitas. Lo sabes antes de empezar y no cambia después."}}, {"@type": "Question", "name": "¿Es confidencial?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, sin excepción. No publico nombres, empresas ni casos que permitan reconocer a nadie."}}]}]}</script>
 </head>
@@ -448,8 +472,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-bet
         </ul>
       </div>
       <form id="cform" novalidate>
+        <div class="cerr" id="cerr"></div>
         <label for="cn">Nombre</label>
         <input id="cn" type="text" autocomplete="name" placeholder="Tu nombre">
+        <label for="ce">Correo</label>
+        <input id="ce" type="email" autocomplete="email" placeholder="tu@correo.com">
+        <input id="chp" type="text" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
         <label for="ct">Qué buscas</label>
         <select id="ct">
           <option>Formación · que me enseñes a hacerlo</option>
@@ -459,27 +487,37 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-bet
         <label for="cm">Qué está pasando</label>
         <textarea id="cm" placeholder="Tres o cuatro líneas me bastan."></textarea>
         <button class="btn" type="submit">Enviar</button>
-        <p class="m">Se abrirá tu correo con el mensaje preparado. También puedes escribir directamente
-        a <a href="mailto:info@manejandoelriesgo.es">info@manejandoelriesgo.es</a>.</p>
+        <p class="m">Al enviar aceptas la <a href="/privacidad">política de privacidad</a>. También puedes escribirme a <a href="mailto:info@manejandoelriesgo.es">info@manejandoelriesgo.es</a>.</p>
       </form>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    <span>Iván Mariscal · Manejando el Riesgo · Formación y consultoría en liderazgo operativo</span>
-    <span>
-      <a href="/formacion-liderazgo">Formación</a> &nbsp;·&nbsp;
-      <a href="/consultoria-liderazgo">Consultoría</a> &nbsp;·&nbsp;
-      <a href="/sobre-mi">Sobre mí</a> &nbsp;·&nbsp;
-      <a href="/recursos-liderazgo">Recursos</a> &nbsp;·&nbsp;
-      <a href="/test">Test</a> &nbsp;·&nbsp;
-      <a href="/pregunta">Hazme una pregunta</a> &nbsp;·&nbsp;
-      <a href="/privacidad.html">Privacidad</a>
-    </span>
+<div class="gf">
+  <div class="gf-in">
+    <div>
+      <div class="gfb">Manejando el Riesgo</div>
+      <div class="gfl">Formación y consultoría en liderazgo operativo.<br>Iván Mariscal · info@manejandoelriesgo.es</div>
+    </div>
+    <div>
+      <div class="gfk">La web</div>
+      <a href="/formacion-liderazgo">Formación</a>
+      <a href="/consultoria-liderazgo">Consultoría</a>
+      <a href="/sobre-mi">Sobre mí</a>
+      <a href="/recursos-liderazgo">Recursos gratuitos</a>
+      <a href="/test">Test</a>
+      <a href="/pregunta">Hazme una pregunta</a>
+    </div>
+    <div>
+      <div class="gfk">Redes y legal</div>
+      <a href="https://www.instagram.com/manejandoelriesgo/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.linkedin.com/in/manejandoelriesgo/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.facebook.com/profile.php?id=61591324212899" target="_blank" rel="noopener">Facebook</a>
+      <a href="/aviso-legal">Aviso legal</a>
+      <a href="/privacidad">Política de privacidad</a>
+    </div>
   </div>
-</footer>
+</div>
 
 <script>
 (function(){
@@ -505,10 +543,32 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-bet
   if(f){f.addEventListener('submit',function(e){
     e.preventDefault();
     var n=document.getElementById('cn').value.trim(),
+        em=document.getElementById('ce').value.trim(),
         t=document.getElementById('ct').value,
-        m=document.getElementById('cm').value.trim();
-    var body='Nombre: '+n+'\nBusco: '+t+'\n\n'+m;
-    location.href='mailto:info@manejandoelriesgo.es?subject='+encodeURIComponent(t+(n?' · '+n:''))+'&body='+encodeURIComponent(body);
+        m=document.getElementById('cm').value.trim(),
+        er=document.getElementById('cerr'),
+        hp=document.getElementById('chp').value;
+    var mal=function(x){er.textContent=x;er.style.display='block'};
+    if(!n) return mal('Escribe tu nombre.');
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)) return mal('Revisa tu correo: lo necesito para contestarte.');
+    if(m.length<10) return mal('Cuéntame un poco qué está pasando.');
+    if(hp) return;
+    er.style.display='none';
+    var b=f.querySelector('button'); b.disabled=true; b.textContent='Enviando…';
+    fetch('https://formsubmit.co/ajax/info@manejandoelriesgo.es',{method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({Nombre:n,Correo:em,Busca:t,Mensaje:m,_replyto:em,
+        _subject:'Web · '+t+' · '+n,_template:'table',_captcha:'false'})})
+    .then(function(r){return r.json()})
+    .then(function(d){
+      if(d && (d.success===true || d.success==='true')){
+        f.innerHTML='<div class="cok"><b>Recibido.</b> Te contesto yo, personalmente, al correo que me has dejado. Lo que me has contado queda entre nosotros.</div>';
+      } else { throw new Error('x'); }
+    })
+    .catch(function(){
+      b.disabled=false; b.textContent='Enviar';
+      mal('No se ha podido enviar. Escríbeme directamente a info@manejandoelriesgo.es');
+    });
   });}
 })();
 </script>

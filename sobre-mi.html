@@ -311,6 +311,25 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-bet
 .prose p{max-width:66ch}
 .prose p{font-size:17.5px;margin-bottom:14px}
 .hero.sub2 h1{font-size:clamp(36px,6.4vw,66px);max-width:17ch}
+
+.gn{position:sticky;top:0;z-index:50;background:rgba(250,248,244,.97);border-bottom:1px solid #E2DCD0;backdrop-filter:blur(6px)}
+.gn-in{max-width:1080px;margin:0 auto;padding:0 22px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.gn .gm{display:flex;align-items:center;gap:10px;text-decoration:none}
+.gn .gm img{height:40px;width:auto;display:block}
+.gn .gnom{font-family:'Roboto Condensed','Arial Narrow',sans-serif;font-weight:700;text-transform:uppercase;font-size:13.5px;letter-spacing:1.4px;color:#14213D}
+.gn .gl{display:flex;align-items:center;gap:22px}
+.gn .gl a.t{font-family:'Lato',system-ui,sans-serif;font-size:14.5px;color:#14213D;text-decoration:none;display:none}
+.gn .gl a.t:hover{color:#C8102E}
+@media(min-width:880px){.gn .gl a.t{display:inline}}
+.gn .gb{background:#C8102E;color:#fff;text-decoration:none;font-family:'Roboto Condensed','Arial Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:1.1px;font-size:13.5px;padding:9px 16px;line-height:1.2}
+.gf{background:#0E1830;color:rgba(250,248,244,.62);font-family:'Lato',system-ui,sans-serif;font-size:14px;line-height:1.6;margin-top:0}
+.gf-in{max-width:1080px;margin:0 auto;padding:34px 22px 38px;display:grid;grid-template-columns:1fr;gap:18px}
+@media(min-width:860px){.gf-in{grid-template-columns:1.2fr 1fr 1fr}}
+.gf .gfb{font-family:'Roboto Condensed','Arial Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;color:#fff;font-size:15px}
+.gf .gfl{margin-top:4px}
+.gf .gfk{font-family:'Roboto Condensed','Arial Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:1.6px;font-size:11.5px;color:rgba(250,248,244,.45);margin-bottom:6px}
+.gf a{color:rgba(250,248,244,.9);text-decoration:none;display:block;padding:2px 0}
+.gf a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
@@ -412,20 +431,31 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-bet
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    <span>Iván Mariscal · Manejando el Riesgo · Formación y consultoría en liderazgo operativo</span>
-    <span>
-      <a href="/formacion-liderazgo">Formación</a> &nbsp;·&nbsp;
-      <a href="/consultoria-liderazgo">Consultoría</a> &nbsp;·&nbsp;
-      <a href="/sobre-mi">Sobre mí</a> &nbsp;·&nbsp;
-      <a href="/recursos-liderazgo">Recursos</a> &nbsp;·&nbsp;
-      <a href="/test">Test</a> &nbsp;·&nbsp;
-      <a href="/pregunta">Hazme una pregunta</a> &nbsp;·&nbsp;
-      <a href="/privacidad.html">Privacidad</a>
-    </span>
+<div class="gf">
+  <div class="gf-in">
+    <div>
+      <div class="gfb">Manejando el Riesgo</div>
+      <div class="gfl">Formación y consultoría en liderazgo operativo.<br>Iván Mariscal · info@manejandoelriesgo.es</div>
+    </div>
+    <div>
+      <div class="gfk">La web</div>
+      <a href="/formacion-liderazgo">Formación</a>
+      <a href="/consultoria-liderazgo">Consultoría</a>
+      <a href="/sobre-mi">Sobre mí</a>
+      <a href="/recursos-liderazgo">Recursos gratuitos</a>
+      <a href="/test">Test</a>
+      <a href="/pregunta">Hazme una pregunta</a>
+    </div>
+    <div>
+      <div class="gfk">Redes y legal</div>
+      <a href="https://www.instagram.com/manejandoelriesgo/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.linkedin.com/in/manejandoelriesgo/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.facebook.com/profile.php?id=61591324212899" target="_blank" rel="noopener">Facebook</a>
+      <a href="/aviso-legal">Aviso legal</a>
+      <a href="/privacidad">Política de privacidad</a>
+    </div>
   </div>
-</footer>
+</div>
 
 <script>
 (function(){
