@@ -291,7 +291,24 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-bet
 .qfoto{position:relative;aspect-ratio:4/5;overflow:hidden;margin-bottom:22px;background:var(--soft)}
 .qfoto img{width:100%;height:100%;object-fit:cover;object-position:45% 22%;display:block}
 .qfoto::after{content:"";position:absolute;left:0;bottom:0;width:72px;height:6px;background:var(--red)}
+.s .lema{font-family:'Roboto Condensed',sans-serif;font-weight:700;text-transform:uppercase;
+  letter-spacing:.4px;font-size:17px;color:var(--red);margin:-4px 0 12px}
+.s .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}
+.s .acts .btn{margin-top:0}
+.curso{margin-top:16px;background:#fff;border:1px dashed var(--line);padding:18px 22px;display:flex;
+  flex-wrap:wrap;gap:12px 22px;align-items:center;justify-content:space-between}
+.curso b{font-family:'Roboto Condensed',sans-serif;text-transform:uppercase;color:var(--navy);font-size:18px}
+.curso > span{font-size:15.4px;color:var(--grey);flex:1;min-width:220px}
+.curso a{color:var(--red);font-weight:700;white-space:nowrap}
+.sit{list-style:none;margin-top:24px;border-top:2px solid var(--navy);max-width:900px}
+.sit li{padding:16px 0 16px 30px;border-bottom:1px solid var(--line);position:relative;font-size:17px;line-height:1.45}
+.sit li::before{content:"";position:absolute;left:0;top:23px;width:12px;height:12px;background:var(--red)}
+.sit li b{color:var(--navy)}
+.prose p{max-width:66ch}
+.prose p{font-size:17.5px;margin-bottom:14px}
+.hero.sub2 h1{font-size:clamp(36px,6.4vw,66px);max-width:17ch}
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://manejandoelriesgo.es/#ivan", "name": "Iván Mariscal", "jobTitle": "Formador y consultor en liderazgo operativo", "url": "https://manejandoelriesgo.es/sobre-mi", "image": "https://manejandoelriesgo.es/ivan-mariscal.jpg", "worksFor": {"@id": "https://manejandoelriesgo.es/#org"}}, {"@type": "ProfessionalService", "@id": "https://manejandoelriesgo.es/#org", "name": "Manejando el Riesgo", "url": "https://manejandoelriesgo.es/", "email": "info@manejandoelriesgo.es", "description": "Formación y consultoría en liderazgo operativo para quien dirige personas.", "areaServed": "ES", "founder": {"@id": "https://manejandoelriesgo.es/#ivan"}, "knowsAbout": ["Liderazgo operativo", "Delegación", "Feedback", "Seguridad psicológica", "Toma de decisiones bajo presión", "Mandos intermedios"]}]}</script>
 </head>
 <body>
 
@@ -302,8 +319,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-bet
       <span class="nom">Manejando el Riesgo</span>
     </a>
     <div class="links">
-      <a class="t" href="/#metodo">Cómo trabajo</a>
-      <a class="t" href="/#servicios">Formación y consultoría</a>
+      <a class="t" href="/formacion-liderazgo">Formación</a>
+      <a class="t" href="/consultoria-liderazgo">Consultoría</a>
       <a class="t" href="/sobre-mi">Sobre mí</a>
       <a class="t" href="/recursos-liderazgo">Recursos</a>
       <a class="btn sm" href="/#contacto">Hablemos</a>
@@ -482,8 +499,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-bet
 <section id="habilidades">
   <div class="wrap">
     <div class="k">Qué se trabaja</div>
-    <h2 class="cond">Mandar es un oficio. Tiene cinco herramientas.</h2>
-    <p class="lead">A ti te enseñaron tu trabajo. Nadie te enseñó a conseguir que lo hagan otros.</p>
+    <h2 class="cond">Mandar es un oficio. Y se aprende.</h2>
+    <p class="lead">A ti te enseñaron tu trabajo. Nadie te enseñó a conseguir que lo hagan otros. Estas son
+    algunas de las cosas que trabajo.</p>
     <div class="lista">
       <div class="f5"><div class="n">1</div><h3>Delegar</h3>
         <p>Dar el trabajo y la capacidad de decidir, sin acabar rehaciéndolo tú el viernes por la tarde.</p></div>
@@ -496,6 +514,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-bet
       <div class="f5"><div class="n">5</div><h3>Decidir bajo presión</h3>
         <p>Cuando todo se cae a la vez, no hay datos y tres personas te miran esperando.</p></div>
     </div>
+    <p class="nota"><a href="/formacion-liderazgo" style="color:var(--red);font-weight:700">Ver el programa completo &rarr;</a></p>
   </div>
 </section>
 
@@ -503,54 +522,49 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-bet
 <section class="soft" id="servicios">
   <div class="wrap">
     <div class="k">Formación y consultoría</div>
-    <h2 class="cond">Cuatro formas de trabajar conmigo</h2>
+    <h2 class="cond">Aprender a hacerlo o resolver lo que tienes delante</h2>
+    <p class="lead">Son dos formas de trabajar conmigo, según lo que necesites. Las dos, para personas
+    y para organizaciones.</p>
     <div class="serv">
       <div class="s a">
-        <div class="para">Para quien dirige</div>
-        <h3>Formación personalizada</h3>
-        <p>Uno a uno, sobre tu equipo y tus casos. Para resolver tu situación concreta, no para
-        aprender liderazgo en general.</p>
+        <div class="para">Para personas y organizaciones</div>
+        <h3>Formación</h3>
+        <div class="lema">Te enseño personalmente a hacerlo</div>
+        <p>A ocupar tu sitio, a dejar de ser el cuello de botella, a delegar con estructura, a dar
+        feedback, a tener la conversación difícil y a conseguir que te cuenten los problemas. Sales
+        sabiendo hacerlo y lo aplicas con tu equipo.</p>
         <ul>
-          <li>Partimos de lo que tienes delante hoy.</li>
-          <li>Las cinco herramientas aplicadas a tus personas.</li>
-          <li>Revisión de lo que aplicas entre sesiones.</li>
+          <li>Uno a uno, sobre tus casos.</li>
+          <li>Talleres para equipos de mando.</li>
+          <li>Con práctica, no con diapositivas.</li>
         </ul>
-        <a class="btn" href="#contacto">Hablemos</a>
+        <div class="acts">
+          <a class="btn" href="/formacion-liderazgo">Ver formación</a>
+          <a class="btn navy" href="#contacto">Hablemos</a>
+        </div>
       </div>
       <div class="s a">
-        <div class="para">Para organizaciones</div>
-        <h3>Consultoría de liderazgo</h3>
-        <p>Analizo cómo funciona tu estructura de mando: dónde se atascan las decisiones, dónde se
-        pierde la información y qué hay que cambiar para que deje de pasar todo por las mismas
-        personas.</p>
+        <div class="para">Para personas y organizaciones</div>
+        <h3>Consultoría</h3>
+        <div class="lema">Trabajamos directamente sobre tu caso</div>
+        <p>Me cuentas la situación que tienes delante: un conflicto que dura meses, un equipo que no
+        funciona, una estructura donde todo pasa por las mismas personas. Trabajamos sobre ella hasta
+        resolverla.</p>
         <ul>
-          <li>Diagnóstico del equipo de mando.</li>
-          <li>Plan de trabajo sobre lo que frena la operativa.</li>
-          <li>Acompañamiento mientras se aplica.</li>
+          <li>Un caso concreto, para ti.</li>
+          <li>La estructura de mando de tu organización.</li>
+          <li>Diagnóstico, plan y acompañamiento.</li>
         </ul>
-        <a class="btn" href="#contacto">Hablemos</a>
+        <div class="acts">
+          <a class="btn" href="/consultoria-liderazgo">Ver consultoría</a>
+          <a class="btn navy" href="#contacto">Hablemos</a>
+        </div>
       </div>
-      <div class="s b">
-        <div class="para">Para equipos de mando</div>
-        <h3>Talleres</h3>
-        <p>Formación para varios mandos a la vez, sobre una de las cinco herramientas o sobre todas.
-        Con práctica, no con diapositivas.</p>
-        <ul>
-          <li>Casos reales de vuestra operativa.</li>
-          <li>Herramientas que se usan al día siguiente.</li>
-        </ul>
-        <a class="btn navy" href="#contacto">Hablemos</a>
-      </div>
-      <div class="s b">
-        <div class="para">Para empezar por tu cuenta</div>
-        <h3>Curso online <span class="prox">En preparación</span></h3>
-        <p>Las cinco herramientas en formato curso, para aplicarlas a tu ritmo. Quien está en la
-        lista se entera el primero.</p>
-        <ul>
-          <li>Entras en la lista haciendo el test.</li>
-        </ul>
-        <a class="btn navy" href="/test">Entrar en la lista</a>
-      </div>
+    </div>
+    <div class="curso">
+      <b>Curso online <span class="prox">En preparación</span></b>
+      <span>El programa, para aplicarlo a tu ritmo. Quien está en la lista se entera el primero.</span>
+      <a href="/test">Entrar en la lista &rarr;</a>
     </div>
     <p class="nota"><strong>Online y presencial. Precio cerrado antes de empezar.</strong> Te lo doy en la primera
     conversación, cuando sé qué necesitas. Sin sorpresas después.</p>
@@ -615,9 +629,10 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-bet
     <div class="k">Preguntas frecuentes</div>
     <h2 class="cond">Antes de escribirme</h2>
     <div class="faq">
-      <details><summary>¿Trabajas con personas o con empresas?</summary>
-        <p>Con las dos. Formación personalizada para quien dirige, y consultoría y talleres para
-        organizaciones que quieren mejorar cómo manda su estructura.</p></details>
+      <details><summary>¿Formación o consultoría?</summary>
+        <p>En la formación te enseño personalmente a delegar, a dar feedback o a tener la conversación
+        difícil. En la consultoría trabajamos directamente sobre tu caso. Las dos sirven igual para una
+        persona que para una organización. Si no lo tienes claro, lo vemos en la primera conversación.</p></details>
       <details><summary>¿Nadie sabrá que trabajo contigo?</summary>
         <p>Nadie por mi parte. No publico nombres, empresas ni casos que permitan reconoceros. Si
         alguna vez cuento una situación, va sin ningún dato que la identifique.</p></details>
@@ -671,10 +686,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-bet
         <input id="cn" type="text" autocomplete="name" placeholder="Tu nombre">
         <label for="ct">Qué buscas</label>
         <select id="ct">
-          <option>Formación personalizada</option>
-          <option>Consultoría para mi organización</option>
-          <option>Taller para un equipo de mando</option>
-          <option>Otra cosa</option>
+          <option>Formación · que me enseñes a hacerlo</option>
+          <option>Consultoría · trabajar sobre mi caso</option>
+          <option>No lo tengo claro</option>
         </select>
         <label for="cm">Qué está pasando</label>
         <textarea id="cm" placeholder="Tres o cuatro líneas me bastan."></textarea>
@@ -690,6 +704,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-bet
   <div class="wrap">
     <span>Iván Mariscal · Manejando el Riesgo · Formación y consultoría en liderazgo operativo</span>
     <span>
+      <a href="/formacion-liderazgo">Formación</a> &nbsp;·&nbsp;
+      <a href="/consultoria-liderazgo">Consultoría</a> &nbsp;·&nbsp;
       <a href="/sobre-mi">Sobre mí</a> &nbsp;·&nbsp;
       <a href="/recursos-liderazgo">Recursos</a> &nbsp;·&nbsp;
       <a href="/test">Test</a> &nbsp;·&nbsp;

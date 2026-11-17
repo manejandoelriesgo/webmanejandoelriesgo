@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /preview-home
+Disallow: /_mantenimiento
+
+Sitemap: https://manejandoelriesgo.es/sitemap.xml

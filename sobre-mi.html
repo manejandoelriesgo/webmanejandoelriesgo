@@ -295,6 +295,22 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-bet
 .qfoto{position:relative;aspect-ratio:4/5;overflow:hidden;margin-bottom:22px;background:var(--soft)}
 .qfoto img{width:100%;height:100%;object-fit:cover;object-position:45% 22%;display:block}
 .qfoto::after{content:"";position:absolute;left:0;bottom:0;width:72px;height:6px;background:var(--red)}
+.s .lema{font-family:'Roboto Condensed',sans-serif;font-weight:700;text-transform:uppercase;
+  letter-spacing:.4px;font-size:17px;color:var(--red);margin:-4px 0 12px}
+.s .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}
+.s .acts .btn{margin-top:0}
+.curso{margin-top:16px;background:#fff;border:1px dashed var(--line);padding:18px 22px;display:flex;
+  flex-wrap:wrap;gap:12px 22px;align-items:center;justify-content:space-between}
+.curso b{font-family:'Roboto Condensed',sans-serif;text-transform:uppercase;color:var(--navy);font-size:18px}
+.curso > span{font-size:15.4px;color:var(--grey);flex:1;min-width:220px}
+.curso a{color:var(--red);font-weight:700;white-space:nowrap}
+.sit{list-style:none;margin-top:24px;border-top:2px solid var(--navy);max-width:900px}
+.sit li{padding:16px 0 16px 30px;border-bottom:1px solid var(--line);position:relative;font-size:17px;line-height:1.45}
+.sit li::before{content:"";position:absolute;left:0;top:23px;width:12px;height:12px;background:var(--red)}
+.sit li b{color:var(--navy)}
+.prose p{max-width:66ch}
+.prose p{font-size:17.5px;margin-bottom:14px}
+.hero.sub2 h1{font-size:clamp(36px,6.4vw,66px);max-width:17ch}
 </style>
 </head>
 <body>
@@ -306,8 +322,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-bet
       <span class="nom">Manejando el Riesgo</span>
     </a>
     <div class="links">
-      <a class="t" href="/#metodo">Cómo trabajo</a>
-      <a class="t" href="/#servicios">Formación y consultoría</a>
+      <a class="t" href="/formacion-liderazgo">Formación</a>
+      <a class="t" href="/consultoria-liderazgo">Consultoría</a>
       <a class="t" href="/sobre-mi">Sobre mí</a>
       <a class="t" href="/recursos-liderazgo">Recursos</a>
       <a class="btn sm" href="/#contacto">Hablemos</a>
@@ -380,8 +396,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-bet
       <div class="s a">
         <div class="para">Para trabajar conmigo</div>
         <h3>Formación y consultoría</h3>
-        <p>Formación personalizada, consultoría para organizaciones y talleres para equipos de mando.
-        Online y presencial. La primera conversación es gratuita: vemos si podemos trabajar juntos.</p>
+        <p>Formación, para enseñarte personalmente a hacerlo, y consultoría, para trabajar directamente sobre tu caso. Para personas
+        y organizaciones, online y presencial. La primera conversación es gratuita: vemos si podemos
+        trabajar juntos.</p>
         <a class="btn" href="/#contacto">Hablemos</a>
       </div>
       <div class="s b">
@@ -399,6 +416,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-bet
   <div class="wrap">
     <span>Iván Mariscal · Manejando el Riesgo · Formación y consultoría en liderazgo operativo</span>
     <span>
+      <a href="/formacion-liderazgo">Formación</a> &nbsp;·&nbsp;
+      <a href="/consultoria-liderazgo">Consultoría</a> &nbsp;·&nbsp;
       <a href="/sobre-mi">Sobre mí</a> &nbsp;·&nbsp;
       <a href="/recursos-liderazgo">Recursos</a> &nbsp;·&nbsp;
       <a href="/test">Test</a> &nbsp;·&nbsp;
